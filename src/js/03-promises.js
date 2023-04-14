@@ -1,4 +1,9 @@
-console.log('test3');
+// console.log('test3');
+
+import Notiflix from 'notiflix';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+// Notiflix.Notify.success('Sol lucet omnibus');
 
 // ======= Submit Btn =======
 const formEl = document.querySelector('.form');
@@ -22,9 +27,16 @@ function makeSeveralPromise(delay, step, amount) {
         console.log(i, delayStart);
         
         createPromise(i, delayStart)
-        .then(({position, delay}) => {console.log(`✅ Fulfilled promise ${position} in ${delay}ms`); })
-        .catch(({position, delay}) => {console.log(`❌ Rejected promise ${position} in ${delay}ms`); })
-        .finally(() => { });
+        .then(({position, delay}) => {
+          console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+          Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        })
+        .catch(({position, delay}) => {
+          console.log(`❌ Rejected promise ${position} in ${delay}ms`); 
+          Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+
+        })
+        .finally(() => {'Как то так'});
         
         delayStart += step;
     }
@@ -48,4 +60,4 @@ function createPromise(position, delay) { //1.2.3...  1000
 
 // ==== Promise /Конец =====
 
-console.log('By Конец');
+// console.log('By Конец');
