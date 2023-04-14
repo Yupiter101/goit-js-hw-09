@@ -4,6 +4,8 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import "flatpickr/dist/themes/material_blue.css";
 
+import Notiflix from 'notiflix';
+
 let myIntervalId = null;
 let totalTime = 0;
 let resultForDisplay = {};
@@ -35,7 +37,9 @@ const options = {
         }
         else {
             console.log('wrong');
-            alert("Please choose a date in the future");
+            Notiflix.Notify.failure( "Please choose a date in the future");
+            // alert("Please choose a date in the future");
+            console.log("Please choose a date in the future");
         }
     },
 };
