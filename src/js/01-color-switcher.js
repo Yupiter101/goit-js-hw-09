@@ -1,11 +1,6 @@
 
 console.log('Hi');
 
-    // Функція Генерація кольорів
-    // const timerId = setTimeout(callback, delay, arg1, arg2, ...);
-    // clearTimeout(timerId);
-    // const timerId = setInterval(callback, delay, arg1, arg2, ...);
-    // clearInterval(timerId);
     // npm start
 
 function getRandomHexColor() {
